@@ -84,12 +84,14 @@ var NovelPipe = {
             next();
         }
         ws.on('finish', () => {
-            RL.prompt();
-            RL.write('正在异步写入,你可以做点别的了，ctrl+u 清除该信息')
-            setTimeout(function () {
-                open(novelPath)
-                    .then(()=>{RL.write(nul, { ctrl: true, name: 'u' });},(e)=>{RL.prompt();RL.write(e.message);})
-            }, 500)
+            setTimeout(function(){
+                open(novelPath,{wait: false})
+                    .then(
+                    () => { RL.write(null, { ctrl: true, name: 'u' }); },
+                    (e) => {RL.prompt(); RL.write(e.message); }
+                    )
+            },2000)
+            RL.write(null, { ctrl: true, name: 'u' }); 
         });
         return ws;
     }

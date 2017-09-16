@@ -12,14 +12,15 @@ function Readline(prompt = `提示`) {
         output: process.stdout,
         prompt: prompt
     })
-    rl.currentKey = '';
+    rl.inputKeys = [];
     rl.questionPromise = rl.questionPromise || function(prompt){
         rl.resume();
         return new Promise((resolve) => {
             rl.question(prompt, (msg) => {
                 rl.pause();
-                rl.currentKey = getChineseOrCDB(msg.trim())
-                resolve(rl.currentKey)
+                msg = getChineseOrCDB(msg.trim())
+                rl.inputKeys.push(msg);
+                resolve(msg)
             })
         })
     }
