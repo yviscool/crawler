@@ -42,6 +42,8 @@ var NovelPipe = {
             rs.push(ele);
         });
         rs.push(null);
+        RL.prompt();
+        RL.write('等待写入完成，完成后会自动打开小说, ctrl+ u 清除该信息')
         return rs;
     },
     // transform 获取章节的名字 内容 
@@ -87,11 +89,11 @@ var NovelPipe = {
             setTimeout(function(){
                 open(novelPath,{wait: false})
                     .then(
-                    () => { RL.write(null, { ctrl: true, name: 'u' }); },
+                    () => {},
                     (e) => {RL.prompt(); RL.write(e.message); }
                     )
             },2000)
-            RL.write(null, { ctrl: true, name: 'u' }); 
+            // RL.write(null, { ctrl: true, name: 'u' }); 
         });
         return ws;
     }
@@ -150,6 +152,8 @@ var AudioJunglePipe = {
         });
         rs.push(options);
         rs.push(null);
+        RL.prompt()
+        RL.write('正在异步写入，你可以做点别的，ctrl+u 清除该信息')
         return rs;
     },
     // transform  获取mp3地址 
@@ -193,9 +197,6 @@ var AudioJunglePipe = {
 
         }
         ws.on('finish', () => {
-            RL.resume();
-            RL.prompt()
-            RL.write('正在异步写入，你可以做点别的，ctrl+u 清除该信息')
         });
         return ws;
     }

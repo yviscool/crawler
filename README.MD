@@ -18,10 +18,5 @@
 
 ### 注意
 
-1. 小说，图片，音乐基本都是 readable.push(url)---> transform.push(request请求内容)----> writeable里面最终写入。
-
-   虽然实现是一样的，但小说和另外两者是有明显区别的。因为后两者是readable只push一个url，然后transform只请求了一次就能获取全部内容，最后writeable异步写入就直接next了，监听finish可以返回主菜单了。这样用户等待时间只有transform里面的request一个请求。
-
-   而下载小说的时候，你会明显看到命令行是卡住的，原因就是readable push多个，时间全部浪费在request请求完所有东西(这样做有一个好处，写入章节内容都是顺序的)。
-    也就是说你下载全本的时候，你操作不了的。
+尽量不要下载全本小说，mk渲染太慢。
 
