@@ -1,4 +1,4 @@
-var RL = require('./utils/readline').Readline;
+var RL = require('./lib/readline');
 
 RL.prompt();
 
