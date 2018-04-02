@@ -7,7 +7,7 @@ module.exports = {
     "biquge": "http://zhannei.baidu.com/cse/search?q=null+&click=1&s=13603361664978768713&nsid=",
     "zimuku":"http://www.zimuku.net/",
     "wallhaven": 'https://alpha.wallhaven.cc/random?page=1',
-    "piaotian":"http://www.piaotian.com/modules/article/search.php",
+    "piaotian":"https://www.piaotian.com/modules/article/search.php",
     'audiojungle': {
         "url": 'https://audiojungle.net/category/music/',
         "category": [
