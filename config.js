@@ -5,7 +5,7 @@ module.exports = {
     "mdm530Search":"http://m.dm530.net/search.asp",
     "id97": "http://www.id97.com/movie/?year=2017",
     "biquge": "http://zhannei.baidu.com/cse/search?q=null+&click=1&s=13603361664978768713&nsid=",
-    "zimuku":"http://www.zimuku.net/",
+    "zimuku":"https://www.zimuku.cn/",
     "wallhaven": 'https://alpha.wallhaven.cc/random?page=1',
     "piaotian":"https://www.piaotian.com/modules/article/search.php",
     'audiojungle': {
